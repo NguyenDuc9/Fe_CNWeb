@@ -126,7 +126,6 @@ export default function NhanVienPage() {
         <thead>
           <tr>
             <th>Ten Dang Nhap</th>
-            <th>Mat Khau</th>
             <th>Ma Nhan Vien</th>
             <th>Vai Tro</th>
             <th>Action</th>
@@ -137,7 +136,6 @@ export default function NhanVienPage() {
           {filtered.map((tk) => (
             <tr key={tk.TenDangNhap}>
               <td>{tk.TenDangNhap}</td>
-              <td>{tk.MatKhau}</td>
               <td>{tk.MaNV}</td>
               <td>{tk.VaiTro}</td>
               <td>

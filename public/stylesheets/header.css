@@ -1,0 +1,49 @@
+/* ===== FILTER BUTTONS ===== */
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid #e2e8f0; /* Thêm viền mỏng cho nút bớt trống */
+  background: #f1f5f9;
+  color: #475569;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+.filter-btn.active {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2); /* Thêm đổ bóng nhẹ cho nút đang chọn */
+}
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header-section h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 24px;
+}
+
+.header-section p {
+  margin: 5px 0 0 0;
+  color: #64748b;
+  font-size: 14px;
+}

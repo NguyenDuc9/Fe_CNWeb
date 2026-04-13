@@ -19,7 +19,7 @@ export default function LuongPage() {
   const [isEdit, setIsEdit] = useState(false);
 
   const [form, setForm] = useState<Luong>({
-    MaLuong: undefined, // AUTO_INCREMENT - optional
+    MaLuong: 0, // AUTO_INCREMENT - optional
     MaNV: '',
     Thang: 0, // number
     Nam: 0, // number
@@ -60,7 +60,7 @@ export default function LuongPage() {
 
     if (isEdit) {
       console.log(form);
-      await updateLuong(form.MaNV, form);
+      await updateLuong(form.MaLuong, form);
     } else {
       console.log(form);
       await createLuong(form);
@@ -70,7 +70,7 @@ export default function LuongPage() {
     setIsEdit(false);
 
     setForm({
-      MaLuong: undefined, // AUTO_INCREMENT - optional
+      MaLuong: 0, // AUTO_INCREMENT - optional
       MaNV: '',
       Thang: 0, // number
       Nam: 0, // number
@@ -97,8 +97,9 @@ export default function LuongPage() {
   };
 
   // delete
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (id: number) => {
     if (confirm('Bạn có chắc muốn xóa?')) {
+      console.log(id);
       await deleteLuong(id);
       loadData();
     }
@@ -107,7 +108,7 @@ export default function LuongPage() {
   // search
   const filtered = data.filter(
     (nv) =>
-      nv.HoTen?.toLowerCase().includes(search.toLowerCase()) ||
+      nv.MaLuong?.toString().toLowerCase().includes(search.toLowerCase()) ||
       nv.MaNV?.toLowerCase().includes(search.toLowerCase()),
   );
 
@@ -122,7 +123,7 @@ export default function LuongPage() {
               setIsEdit(false);
               setShowForm(true);
               setForm({
-                MaLuong: undefined, // AUTO_INCREMENT - optional
+                MaLuong: 0, // AUTO_INCREMENT - optional
                 MaNV: '',
                 Thang: 0, // number
                 Nam: 0, // number
@@ -192,7 +193,7 @@ export default function LuongPage() {
                   <Pencil size={18} />
                 </button>
 
-                <button onClick={() => handleDelete(nv.MaNV)}>
+                <button onClick={() => handleDelete(nv.MaLuong)}>
                   <Trash2 size={18} />
                 </button>
               </td>

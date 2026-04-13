@@ -1,8 +1,8 @@
 'use client';
-import SidebarManager from '../Manager/dashboard/page';
-import '../../public/stylesheets/admin.css';
+import SidebarStaff from '../staff/dashboard/page';
+// import '../../public/stylesheets/admin.css';
 import Link from 'next/link';
-export default function LayoutManager({
+export default function LayoutStaff({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -18,7 +18,7 @@ export default function LayoutManager({
           <div className="logo">Quản lý nhân sự</div>
 
           <div className="right">
-            <span className="welcome">Chào Manager</span>
+            <span className="welcome">Chào Nhân viên</span>
             <button className="logout" onClick={handleLogout}>
               <Link href="/">Logout</Link>
             </button>
@@ -27,7 +27,7 @@ export default function LayoutManager({
       </div>
       <div style={{ display: 'flex', gap: '20px' }}>
         <div>
-          <SidebarManager />
+          <SidebarStaff />
         </div>
 
         {children}

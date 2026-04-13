@@ -1,5 +1,7 @@
-import SidebarAdmin from '../Manager/dashboard/page';
+'use client';
+import SidebarAdmin from '../admin/dashboard/page';
 import '../../public/stylesheets/admin.css';
+import Link from 'next/link';
 export default function LayoutAdmin({
   children,
 }: Readonly<{
@@ -13,7 +15,15 @@ export default function LayoutAdmin({
 
           <div className="right">
             <span className="welcome">Chào Admin</span>
-            <button className="logout">Logout</button>
+            <button
+              className="logout"
+              onClick={() => {
+                localStorage.removeItem('accessToken');
+                localStorage.removeItem('user');
+              }}
+            >
+              <Link href="/">Logout</Link>
+            </button>
           </div>
         </header>
       </div>

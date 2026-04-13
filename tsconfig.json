@@ -29,7 +29,8 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "app/admin/taikhoan"
+    "app/admin/taikhoan",
+    "app/Manager/BangLuong/page.tsx"
   ],
   "exclude": ["node_modules"]
 }

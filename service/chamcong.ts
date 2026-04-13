@@ -130,15 +130,7 @@ export default function ChamCongPage() {
     if (isEdit && editId !== null) {
       await updateChamCong(editId, { CaLamViec: formCa });
     } else {
-      try {
-        await createChamCong({ CaLamViec: formCa, ThoiGian: todayISO() });
-      } catch (err: any) {
-        const msg =
-          err?.response?.data?.message || err?.message || 'Có lỗi xảy ra';
-
-        alert(msg); // 👈 hiện popup ngay
-        setFormError(msg); // (tuỳ chọn) vẫn lưu để hiển thị trên UI
-      }
+      await createChamCong({ CaLamViec: formCa, ThoiGian: todayISO() });
     }
     setShowForm(false);
     setIsEdit(false);
